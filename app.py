@@ -359,14 +359,14 @@ def model_predict(nclicks, dataString, predict_ndays, model_typ, tseries_type, c
         df = pd.read_json(dataDic['df'], orient='split')
         print("model_type: ", model_typ)
         if(model_typ =='rnn'):
-            tsd = accd.tseries_data(df[tseries_type], df['date'])
+            tsd = accd.tseries_data(df[tseries_type][0:400], df['date'][0:400])
             offs = predict_ndays
             series_len = 30
             n_inputs = 1
             n_neurons = 100
             n_outputs = 1
             learning_rate = 0.001
-            n_train_iter = 3001
+            n_train_iter = 301
 
             tf.reset_default_graph()
             xx = tf.placeholder(tf.float64, [None, series_len, n_inputs])
@@ -391,7 +391,7 @@ def model_predict(nclicks, dataString, predict_ndays, model_typ, tseries_type, c
                         x_series, y_series = tsd.get_series(series_len, offs)
                     sess.run(train, feed_dict={xx: x_series, yy: y_series})
                     
-                    if iteration % 1000 == 0:            
+                    if iteration % 100 == 0:            
                         mse = loss.eval(feed_dict={xx: x_series, yy: y_series})
                         str_msg = str_msg + "Iteration: {0},  Mean Square Error: {1:1.5E} \n".format(iteration, mse) 
                         print(str_msg)
