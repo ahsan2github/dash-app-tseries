@@ -1,0 +1,4 @@
+"BBANDS":{"BBANDS":"Bollinger bands", "interval":"weekly", "time_period":5, "nbdevup":2, "nbdevdn":2, "matype":0},
+"STOCH":{"STOCH":"Stochastic Oscillator", "interval":"daily", "fastkperiod":5, "slowkperiod":3, "slowdperiod":3, "slowkmatype":0, "slowdmatype":0},
+"STOCHF":{"STOCHF":"Stochastic Fast", "interval":"daily", "fastkperiod":5, "fastdperiod":3, "fastdmatype":0}, 
+"MACDEXT":{"MACDEXT":"Moving Average Convergence / Divergence Values with Controllable Moving Average Type", "interval":"daily", "fastperiod":12, "slowperiod":26, "signalperiod":9, "fastmatype":0},
