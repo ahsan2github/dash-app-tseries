@@ -363,10 +363,10 @@ def model_predict(nclicks, dataString, predict_ndays, model_typ, tseries_type, c
             offs = predict_ndays
             series_len = 30
             n_inputs = 1
-            n_neurons = 200
+            n_neurons = 100
             n_outputs = 1
             learning_rate = 0.001
-            n_train_iter = 5001
+            n_train_iter = 3001
 
             tf.reset_default_graph()
             xx = tf.placeholder(tf.float64, [None, series_len, n_inputs])
