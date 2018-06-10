@@ -1,6 +1,5 @@
-if __name__ == "accumulate_data":
-    import numpy as np
-    from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+from sklearn.preprocessing import MinMaxScaler
 
 class tseries_data:
     def __init__(self, source, source_dates):
